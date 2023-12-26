@@ -51,7 +51,7 @@ const incrementIndex = () => {
 </div>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans:wght@300&display=swap');
 
 .frame {
     display: flex;
@@ -60,7 +60,7 @@ const incrementIndex = () => {
     background: radial-gradient(
         circle,
         #fbf6ef 0%,
-        #dce0d9 35%,
+        #dce0d9 10%,
         #ead7c3  100%
     );
     width: 100vw;
@@ -104,12 +104,12 @@ blockquote {
 }
 
 blockquote p {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
+    font-family: "Caveat", cursive;
+    font-size: 1.6rem;
 }
 
 blockquote footer {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Open Sans", sans-serif;
     font-size: 1rem;
 }
 
@@ -119,5 +119,15 @@ button {
     border: solid 1px #888;
     border-radius: 4px;
     box-shadow: 0px 1px 4px 0px #888;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #FFF;
+    transition: background-color 0.8s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #ffe9cb;
 }
 </style>
