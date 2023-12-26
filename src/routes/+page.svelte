@@ -1,6 +1,6 @@
 <script>
-let i = 0;
-let key = i;
+import { fade } from "svelte/transition";
+
 const quotes = [
     {
         quote: "Be yourself; everyone else is already taken.",
@@ -23,28 +23,35 @@ const quotes = [
         author: "Marcus Tullius Cicero"
     }
 ]
+let i = 0;
+let currentQuote = [quotes[i]];
 const incrementIndex = () => {
     i === quotes.length - 1 ? i = 0 : i += 1;
-    key = i;
+    currentQuote = [];
+    setTimeout(() => {
+        currentQuote = [quotes[i]];
+    }, 400);
 };
 </script>
 
 <div class="frame">
     <div class="outer">
         <div class="innerTop">
-            <blockquote>
-                <p>{quotes[i].quote}</p>
-                <footer>{quotes[i].author}</footer>
-            </blockquote>
+            {#each currentQuote as quote (quote.quote)}
+                <blockquote out:fade={{ duration: 400 }} in:fade={{ duration: 1000 }}>
+                    <p>{quote.quote}</p>
+                    <footer>{quote.author}</footer>
+                </blockquote>
+            {/each}
         </div>
         <div class="innerBottom">
-            <button on:click={incrementIndex}>Generate New Quote</button>
+            <button id="generateNewQuoteButton" on:click={incrementIndex}>Generate New Quote</button>
         </div>
     </div>
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 .frame {
     display: flex;
