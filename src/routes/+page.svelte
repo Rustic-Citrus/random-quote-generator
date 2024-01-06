@@ -1,5 +1,4 @@
 <script>
-    // import { fade } from "svelte/transition";
     import { crossfade } from "svelte/transition";
     import { quintOut } from "svelte/easing";
     import data from "../data/quotes.json";
