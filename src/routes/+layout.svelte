@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-    <title>Random Quote Generator</title>
+    <title>Random Quote Generator | Rustic-Citrus</title>
 </svelte:head>
 
 <header>
