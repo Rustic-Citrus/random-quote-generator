@@ -26,8 +26,8 @@ const incrementIndex = () => {
 </script>
 
 <div class="frame">
-    <div class="outer">
-        <div class="innerTop">
+    <div class="card-outer">
+        <div class="card-inner-top">
             {#each currentQuote as quote (quote.quote)}
                 <blockquote out:fade={{ duration: 400 }} in:fade={{ duration: 1000 }}>
                     <p>{quote.quote}</p>
@@ -35,16 +35,15 @@ const incrementIndex = () => {
                 </blockquote>
             {/each}
         </div>
-        <div class="innerBottom">
+        <div class="card-inner-bottom">
             <button id="generateNewQuoteButton" on:click={incrementIndex}>Generate New Quote</button>
         </div>
     </div>
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans:wght@300&display=swap');
-
 .frame {
+    flex: 1 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,11 +53,12 @@ const incrementIndex = () => {
         #dce0d9 10%,
         #ead7c3  100%
     );
+    margin: 0 auto;
     width: 100vw;
-    height: 100vh;
+    box-sizing: border-box;
 }
 
-.outer {
+.card-outer {
     width: 67%;
     height: 33%;
     display: flex;
@@ -73,7 +73,7 @@ const incrementIndex = () => {
     box-shadow: 0px 1px 4px 0px #888;
 }
 
-.innerTop {
+.card-inner-top {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +81,7 @@ const incrementIndex = () => {
     height: 75%;
 }
 
-.innerBottom {
+.card-inner-bottom {
     display: flex;
     flex-direction: column;
     justify-content: center;
